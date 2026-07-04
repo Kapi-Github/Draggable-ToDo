@@ -11,7 +11,7 @@ Artisan::command("tests:run", function () {
 });
 
 /**
- * Prepares the environment by creating a .env file from the example if it doesn't exist. It's also generates an application key and runs a fresh database migration.
+ * Prepares the environment by creating a .env file from the example if it doesn't exist. It's also generates an application key.
  */
 Artisan::command("env:prepare", function () {
     if (file_exists(base_path(".env"))) {
