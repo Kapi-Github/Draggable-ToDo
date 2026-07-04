@@ -24,12 +24,18 @@ class PrepareDatabaseForTests extends Command
 
         $schemaName = config("database.connections.mysql.database") . "_testing";
 
-        Schema::dropDatabaseIfExists($schemaName);
-        Schema::createDatabase($schemaName);
+        config(["database.connections.mysql.database" => null]);
+
+        DB::purge("mysql");
+        DB::reconnect("mysql");
+
+        DB::statement("DROP DATABASE IF EXISTS $schemaName");
+        DB::statement("CREATE DATABASE $schemaName");
 
         config(["database.connections.mysql.database" => $schemaName]);
 
         DB::purge("mysql");
+        DB::reconnect("mysql");
 
         $this->call("migrate:fresh", ["--env" => "testing"]);
         $this->call("optimize:clear");

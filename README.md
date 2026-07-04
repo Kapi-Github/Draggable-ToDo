@@ -1,55 +1,116 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+    <img src="https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel" alt="Laravel">
+    <img src="https://img.shields.io/badge/MySQL-9.3-09DE42?logo=mysql" alt="MySQL">
+    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react" alt="React">
+    <img src="https://img.shields.io/badge/React_Router-89C779?logo=reactrouter" alt="React Router">
+    <img src="https://img.shields.io/badge/TypeScript-0A1F26?logo=tailwindcss" alt="TypeScript">
+    <img src="https://img.shields.io/badge/Tailwind_CSS-0C17EB?logo=typescript" alt="Tailwind CSS">
+    <img src="https://img.shields.io/badge/TanStack_Query-2E3436?logo=tanstack" alt="TanStack Query">
+    <img src="https://img.shields.io/badge/Axios-2D5224?logo=axios" alt="Axios">
+    <img src="https://img.shields.io/badge/dnd_kit-1C4345" alt="dnd kit">
 </p>
 
-## About Laravel
+# Draggable To Do
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Draggable To Do** to platforma służąca do zarządzania swoimi zadaniami. W łatwy i przystępny sposób możesz tworzyć nowe "**_Obszary robocze_**" tzw. "**_Workspace'y_**", tworzyć i przeciągać zadania oraz zarządzać widocznością kolumn w obszarze roboczym.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<details>
+<summary>Screenshoty</summary>
+<ul style="list-style:none">
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<li>
 
-## Learning Laravel
+### Akcje użytkownika
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<div align="center">
+    <img src="docs/user_actions/login_view.png" width="45%" />
+    <img src="docs/user_actions/registration_view.png" width="45%" />
+</div>
+</li>
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<li>
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### Po zalogowaniu
 
-## Agentic Development
+<img src="docs/workspace/workspaces_panel_view.png" />
+<img src="docs/workspace/new_workspace_view.png" />
+<img src="docs/workspace/single_workspace_view.png" />
+<img src="docs/workspace/manage_columns_visibility_view.png" />
+<img src="docs/workspace/manage_workspace_view.png" />
+<img src="docs/workspace/delete_workspace_view.png" />
+<img src="docs/workspace/new_task_view.png" />
+<img src="docs/workspace/manage_task_view.png" />
+</li>
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+<li>
+
+### Przeciąganie zadań
+
+<img src="docs/dnd/dnd_workspace_example.png" />
+<img src="docs/dnd/dnd_task_example.png" />
+
+</li>
+
+</ul>
+</details>
+
+## Wymagania do uruchomienia
+
+- PHP 8.3+
+- Composer 2.8.8+
+- MySQL 9.3+
+- Node.js 22+
+
+## Lokalne uruchomienie aplikacji
+
+1. Sklonuj repozytorium
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/kacper-wladarz/Draggable-ToDo.git
+cd Draggable-ToDo
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+2. Stwórz i ustaw token Github
 
-## Contributing
+Wejdź na stronę https://github.com/settings/tokens/new i wygeneruj token. Następnie wklej go do poniższej komendy
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer config -g github-oauth.github.com <TOKEN>
+```
 
-## Code of Conduct
+3. Zainstaluj zależności PHP
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+composer install
+```
 
-## Security Vulnerabilities
+4. Zainstaluj zależności JS
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+npm install
+```
 
-## License
+5. Przygotuj plik środowiskowy (.env)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan env:prepare
+```
+
+6. Uruchom server lokalnie
+
+```bash
+npm run full-dev
+```
+
+7. Uruchomienie testów
+
+```bash
+php artisan tests:run
+```
+
+## Struktura projektu
+
+```
+resources/app/     React (frontend)
+app/               Laravel (backend)
+```
