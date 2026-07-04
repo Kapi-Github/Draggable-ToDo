@@ -31,7 +31,7 @@ Artisan::command("env:prepare", function () {
     $this->call("key:generate");
     $this->info("Application key generated successfully");
 
-    $this->call("migrate:fresh --force");
+    $this->call("migrate:fresh");
     $this->info("Database migrated successfully");
 
     return self::SUCCESS;
