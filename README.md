@@ -96,13 +96,18 @@ npm install
 php artisan env:prepare
 ```
 
-6. Uruchom server lokalnie
+6. Ustaw potrzebne zmienne w .env:
+
+- DB_USERNAME
+- DB_PASSWORD
+
+7. Uruchom server lokalnie
 
 ```bash
 npm run full-dev
 ```
 
-7. Uruchomienie testów
+8. Uruchomienie testów
 
 ```bash
 php artisan tests:run
