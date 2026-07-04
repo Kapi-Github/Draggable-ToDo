@@ -101,13 +101,19 @@ php artisan env:prepare
 - DB_USERNAME
 - DB_PASSWORD
 
-7. Uruchom server lokalnie
+7. Uruchom migracje
+
+```bash
+php artisan migrate:fresh
+```
+
+8. Uruchom server lokalnie
 
 ```bash
 npm run full-dev
 ```
 
-8. Uruchomienie testów
+9. Uruchomienie testów
 
 ```bash
 php artisan tests:run
