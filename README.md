@@ -44,7 +44,7 @@
 
 <li>
 
-### Przeciąganie zadań
+### Przeciąganie obszarów roboczych (workspace'ów) i zadań
 
 <img src="docs/dnd/dnd_workspace_example.png" />
 <img src="docs/dnd/dnd_task_example.png" />
@@ -72,7 +72,7 @@ cd Draggable-ToDo
 
 2. Stwórz i ustaw token Github
 
-Wejdź na stronę https://github.com/settings/tokens/new i wygeneruj token. Następnie wklej go do poniższej komendy
+<a href="https://github.com/settings/tokens/new" target="_blank">Kliknij tutaj</a> i wygeneruj token. Następnie wklej go do poniższej komendy
 
 ```bash
 composer config -g github-oauth.github.com <TOKEN>
